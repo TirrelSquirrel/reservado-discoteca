@@ -1,0 +1,30 @@
+body {
+  background-color: #282c34;
+  color: whitesmoke;
+}
+
+.login-container {
+  background-color: #4b5261;
+
+  width: 50vw;
+  max-width: 650px;
+  min-width: 350px;
+  margin: auto;
+  margin-top: 50px;
+
+
+  border-radius: 20px;
+}
+
+.login-title {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: -10px;
+    font-weight: bolder;
+    font-size: 1.8em;
+}
+
+.login-form {
+    margin: 30px;
+    padding-bottom: 15px;
+}
