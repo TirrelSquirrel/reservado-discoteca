@@ -28,3 +28,8 @@ body {
     margin: 30px;
     padding-bottom: 15px;
 }
+
+.login-buttons {
+    display: flex;
+    justify-content: space-between;
+}
