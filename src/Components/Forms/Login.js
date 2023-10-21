@@ -11,13 +11,24 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
-  const [registred, setRegistred] = useState(true);
+  const [registered, setRegistered] = useState(true);
+
+  const changeForm = () => {
+    setRegistered(!registered);
+    setName('')
+    setEmail('')
+    setPassword('')
+    setPasswordRepeat('')
+    setInvalidCredentials(false)
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -38,11 +49,15 @@ const Login = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
+    if(password !== passwordRepeat) {
+        console.log('Las contraseñas no coinciden')
+        setInvalidCredentials(true)
+    }
   }
 
   return (
     <div className="login-container">
-      {registred ? (
+      {registered ? (
         <Form onSubmit={(e) => handleLogin(e)}>
           <h2 className="login-title">Inicia sesión</h2>
 
@@ -50,7 +65,7 @@ const Login = () => {
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                type="email"
+                type="text"
                 placeholder="correo@ejemplo.es"
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -67,10 +82,7 @@ const Login = () => {
             </Form.Group>
 
             <div className="login-buttons">
-              <Button
-                variant="warning"
-                onClick={() => setRegistred(!registred)}
-              >
+              <Button variant="warning" onClick={() => changeForm()}>
                 Regístrate
               </Button>
 
@@ -90,6 +102,25 @@ const Login = () => {
           <h2 className="login-title">Regístrate</h2>
 
           <div className="login-form">
+            <Form.Group className="mb-3">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Nombre"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="tel"
+                pattern="[0-9]{6}"
+                placeholder="Teléfono"
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -119,10 +150,7 @@ const Login = () => {
             </Form.Group>
 
             <div className="login-buttons">
-              <Button
-                variant="warning"
-                onClick={() => setRegistred(!registred)}
-              >
+              <Button variant="warning" onClick={() => changeForm()}>
                 ¿Ya tienes cuenta?
               </Button>
 
@@ -130,6 +158,11 @@ const Login = () => {
                 Registrar
               </Button>
             </div>
+            {invalidCredentials && (
+              <Alert variant="danger" className="mt-2">
+                Las contraseñas no coinciden
+              </Alert>
+            )}
           </div>
         </Form>
       )}
