@@ -93,3 +93,13 @@ body {
 .event-date {
   font-size: 0.7em;
 }
+
+.back-button {
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2em;
+  background-color: #724f4f;
+  color: whitesmoke;
+  font-weight: bold;
+}

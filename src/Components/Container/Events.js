@@ -18,37 +18,7 @@ const Events = () => {
         description:
           "Ven con la cara de otro, el mejor disfraz se lleva un premio",
         date: "14/11/2023",
-      },
-      {
-        name: "Fiesta de disfraces",
-        description:
-          "Ven con la cara de otro, el mejor disfraz se lleva un premio",
-        date: "14/11/2023",
-      },
-      {
-        name: "Fiesta de disfraces",
-        description:
-          "Ven con la cara de otro, el mejor disfraz se lleva un premio",
-        date: "14/11/2023",
-      },
-      {
-        name: "Fiesta de disfraces",
-        description:
-          "Ven con la cara de otro, el mejor disfraz se lleva un premio",
-        date: "14/11/2023",
-      },
-      {
-        name: "Fiesta de disfraces",
-        description:
-          "Ven con la cara de otro, el mejor disfraz se lleva un premio",
-        date: "14/11/2023",
-      },
-      {
-        name: "Fiesta de disfraces",
-        description:
-          "Ven con la cara de otro, el mejor disfraz se lleva un premio",
-        date: "14/11/2023",
-      },
+      }
     ];
     
     return (
@@ -64,6 +34,7 @@ const Events = () => {
             );
           })}
         </div>
+          <button className='back-button'>Volver</button>
       </div>
     );
 }
