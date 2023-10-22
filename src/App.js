@@ -5,6 +5,7 @@ import Main from './Components/Container/Main';
 import Events from './Components/Container/Events';
 import MainMenu from './Components/Pure/MainMenu';
 import Reservados from './Components/Container/Reservados';
+import ReservadosMenu from './Components/Pure/ReservadosMenu';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <Route path='main' element={<Main />}>
             <Route path='' element={<MainMenu />} />
             <Route path='events' element={<Events />} />
-            <Route path='book' element={<Reservados />} />
+            <Route path='book' element={<Reservados />}>
+              <Route path='' element={<ReservadosMenu />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
