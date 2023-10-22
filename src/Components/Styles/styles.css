@@ -10,7 +10,7 @@ body {
   max-width: 650px;
   min-width: 350px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 
   border-radius: 20px;
 }
@@ -41,8 +41,11 @@ body {
   align-items: center;
   gap: 15px;
   font-size: 1.2rem;
-  font-weight: bold;
   user-select: none;
+}
+
+.main-container::-webkit-scrollbar {
+  display: none;
 }
 
 .main-div-button {
@@ -51,6 +54,7 @@ body {
   text-align: center;
   padding: 5px;
   border-radius: 15px;
+  font-weight: bold;
 
   opacity: 0.8;
 }
@@ -66,4 +70,26 @@ body {
 
 .main-div-button:active {
   scale: 0.98;
+}
+
+.event-item {
+  background-color: #6c768b;
+  border-radius: 15px;
+
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.event-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.event-description {
+  font-size: 0.8em;
+}
+
+.event-date {
+  font-size: 0.7em;
 }
