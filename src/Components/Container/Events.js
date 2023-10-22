@@ -1,4 +1,5 @@
 import React from 'react';
+import BackButton from '../Pure/BackButton';
 
 const Events = () => {
 
@@ -18,7 +19,7 @@ const Events = () => {
         description:
           "Ven con la cara de otro, el mejor disfraz se lleva un premio",
         date: "14/11/2023",
-      }
+      },
     ];
     
     return (
@@ -33,8 +34,8 @@ const Events = () => {
               </div>
             );
           })}
+          <BackButton />
         </div>
-          <button className='back-button'>Volver</button>
       </div>
     );
 }
