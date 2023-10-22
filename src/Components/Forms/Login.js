@@ -23,11 +23,16 @@ const Login = () => {
 
   const changeForm = () => {
     setRegistered(!registered);
-    setName('')
+    clearAll()
+    setInvalidCredentials(false)
+  }
+
+  const clearAll = () => {
+    setName('');
     setEmail('')
+    setPhone('')
     setPassword('')
     setPasswordRepeat('')
-    setInvalidCredentials(false)
   }
 
   const handleLogin = (e) => {
@@ -40,8 +45,7 @@ const Login = () => {
       return;
     }
 
-    setEmail("");
-    setPassword("");
+    clearAll()
     setInvalidCredentials(false);
     console.log("Sesion iniciada");
     navigate("/main");
@@ -56,7 +60,7 @@ const Login = () => {
   }
 
   return (
-    <div className="login-container">
+    <div className="generic-container">
       {registered ? (
         <Form onSubmit={(e) => handleLogin(e)}>
           <h2 className="login-title">Inicia sesión</h2>
@@ -115,7 +119,7 @@ const Login = () => {
               <Form.Label>Teléfono</Form.Label>
               <Form.Control
                 type="tel"
-                pattern="[0-9]{6}"
+                pattern="[6-7]{1}[0-9]{5}"
                 placeholder="Teléfono"
                 onChange={(e) => setPhone(e.target.value)}
                 required
