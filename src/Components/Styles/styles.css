@@ -129,3 +129,7 @@ body {
   text-transform: capitalize;
   margin-top: -15px;
 }
+
+.map-zone-img {
+  max-width: 100%;
+}
