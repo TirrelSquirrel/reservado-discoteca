@@ -24,9 +24,9 @@ const Events = () => {
   return (
     <div className="generic-container">
       <div className="main-container">
-        {eventsArray.map((event) => {
+        {eventsArray.map((event, index) => {
           return (
-            <div className="event-item px-2">
+            <div className="event-item px-2" key={index}>
               <p className="event-name">{event.name}</p>
               <p className="event-description">{event.description}</p>
               <p className="event-date">{event.date}</p>

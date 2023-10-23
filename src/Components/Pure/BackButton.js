@@ -6,7 +6,7 @@ const BackButton = () => {
     return (
       <div className="float">
         <button className="back-button" onClick={() => navigate(-1)}>
-          <span class="material-symbols-outlined">undo</span>
+          <span className="material-symbols-outlined">undo</span>
         </button>
       </div>
     );

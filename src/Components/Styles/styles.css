@@ -124,3 +124,8 @@ body {
 .back-button:active {
   scale: 0.95;
 }
+
+.book-detail-title {
+  text-transform: capitalize;
+  margin-top: -15px;
+}

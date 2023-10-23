@@ -1,12 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ReservadosMenu = () => {
+
+  const navigate = useNavigate()
+
     return (
       <>
         <h4>¿En qué zona quieres reservar?</h4>
-        <div className="main-div-button">Terraza 1</div>
-        <div className="main-div-button">Terraza 2</div>
-        <div className="main-div-button">Interior</div>
+        <div className="main-div-button" onClick={() => navigate('Rock&mola')}>Rock&Mola</div>
+        <div className="main-div-button" onClick={() => navigate('Maisha')}>Maisha</div>
+        <div className="main-div-button" onClick={() => navigate('Winter-Club')}>Winter Club</div>
       </>
     );
 }
