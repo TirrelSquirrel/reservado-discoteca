@@ -8,10 +8,9 @@ import Reservados from "./Components/Container/Reservados";
 import ReservadosMenu from "./Components/Pure/ReservadosMenu";
 import DetallesReservado from "./Components/Forms/DetallesReservado";
 import BottlesList from "./Components/Pure/BottlesList";
+import FAQ from "./Components/Pure/FAQ";
 
-const LugarReservado = () => {
-  let { bookPlace } = useParams();
-};
+
 
 function App() {
   return (
@@ -26,6 +25,7 @@ function App() {
             <Route path=":bookPlace" element={<DetallesReservado />} />
           </Route>
           <Route path="bottles" element={<BottlesList />} />
+          <Route path="faq" element={<FAQ />} />
         </Route>
       </Routes>
     </BrowserRouter>
