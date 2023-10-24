@@ -17,7 +17,7 @@ const MainMenu = () => {
 
             <div className="main-div-button" onClick={() => navigate('events')}>Eventos</div>
             <div className="main-div-button" onClick={() => navigate('book')}>Reservados</div>
-            <div className="main-div-button">Botellas</div>
+            <div className="main-div-button" onClick={() => navigate('bottles')}>Botellas</div>
             <div className="main-div-button">Preguntas frecuentes</div>
             <div className="main-div-button logout" onClick={handleLogout}>
               Cerrar sesión

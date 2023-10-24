@@ -7,6 +7,7 @@ import MainMenu from "./Components/Pure/MainMenu";
 import Reservados from "./Components/Container/Reservados";
 import ReservadosMenu from "./Components/Pure/ReservadosMenu";
 import DetallesReservado from "./Components/Forms/DetallesReservado";
+import BottlesList from "./Components/Pure/BottlesList";
 
 const LugarReservado = () => {
   let { bookPlace } = useParams();
@@ -24,6 +25,7 @@ function App() {
             <Route path="" element={<ReservadosMenu />} />
             <Route path=":bookPlace" element={<DetallesReservado />} />
           </Route>
+          <Route path="bottles" element={<BottlesList />} />
         </Route>
       </Routes>
     </BrowserRouter>
