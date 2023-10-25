@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Components/Styles/styles.css";
 import Login from "./Components/Forms/Login";
 import Main from "./Components/Container/Main";
@@ -9,6 +9,7 @@ import ReservadosMenu from "./Components/Pure/ReservadosMenu";
 import DetallesReservado from "./Components/Forms/DetallesReservado";
 import BottlesList from "./Components/Pure/BottlesList";
 import FAQ from "./Components/Pure/FAQ";
+import ErrorComponent from "./Components/Pure/ErrorComponent";
 
 
 
@@ -25,8 +26,9 @@ function App() {
             <Route path=":bookPlace" element={<DetallesReservado />} />
           </Route>
           <Route path="bottles" element={<BottlesList />} />
-          <Route path="faq" element={<FAQ />} />
+          <Route path="faq" element={<FAQ />} />          
         </Route>
+        <Route path="*" element={<ErrorComponent />} />
       </Routes>
     </BrowserRouter>
   );
