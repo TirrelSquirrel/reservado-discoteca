@@ -20,3 +20,11 @@
 
   opacity: 0.8;
 }
+
+.admin-div-button:hover {
+  opacity: 1;
+}
+
+.admin-div-button:active {
+  scale: 0.98;
+}
