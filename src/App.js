@@ -10,6 +10,7 @@ import DetallesReservado from "./Components/Forms/DetallesReservado";
 import BottlesList from "./Components/Pure/BottlesList";
 import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
+import AdminPanel from "./Components/Container/AdminPanel";
 
 
 
@@ -26,7 +27,8 @@ function App() {
             <Route path=":bookPlace" element={<DetallesReservado />} />
           </Route>
           <Route path="bottles" element={<BottlesList />} />
-          <Route path="faq" element={<FAQ />} />          
+          <Route path="faq" element={<FAQ />} />
+          <Route path="admin" element={<AdminPanel />} />
         </Route>
         <Route path="*" element={<ErrorComponent />} />
       </Routes>
