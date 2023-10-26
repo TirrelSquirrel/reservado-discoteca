@@ -1,10 +1,14 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import BackButton from '../Pure/BackButton';
+import '../Styles/adminstyles.css'
 
 const AdminPanel = () => {
     return (
-        <div className='generic container'>
+        <div className='admin-generic-container'>
             <div className='main-container'>
-                <h2>Panel de administración</h2>
+                <Outlet />
+                <BackButton />                
             </div>
         </div>
     );

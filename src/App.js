@@ -11,6 +11,7 @@ import BottlesList from "./Components/Pure/BottlesList";
 import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
 import AdminPanel from "./Components/Container/AdminPanel";
+import AdminMenu from "./Components/Pure/AdminMenu";
 
 
 
@@ -28,7 +29,9 @@ function App() {
           </Route>
           <Route path="bottles" element={<BottlesList />} />
           <Route path="faq" element={<FAQ />} />
-          <Route path="admin" element={<AdminPanel />} />
+          <Route path="admin" element={<AdminPanel />}>
+            <Route path="" element={<AdminMenu />} />
+          </Route>
         </Route>
         <Route path="*" element={<ErrorComponent />} />
       </Routes>

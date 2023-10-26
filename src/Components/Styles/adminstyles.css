@@ -1,0 +1,22 @@
+.admin-generic-container {
+  background-color: #285fd6;
+
+  width: 50vw;
+  max-width: 650px;
+  min-width: 350px;
+  margin: auto;
+  margin-top: 30px;
+
+  border-radius: 20px;
+}
+
+.admin-div-button {
+  background-color: #505661;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 15px;
+  font-weight: bold;
+
+  opacity: 0.8;
+}
