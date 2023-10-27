@@ -10,8 +10,8 @@ import DetallesReservado from "./Components/Forms/DetallesReservado";
 import BottlesList from "./Components/Pure/BottlesList";
 import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
-import AdminPanel from "./Components/Container/AdminPanel";
-import AdminMenu from "./Components/Pure/AdminMenu";
+import AdminPanel from "./Components/Admin/Container/AdminPanel";
+import AdminMenu from "./Components/Admin/Pure/AdminMenu";
 
 
 

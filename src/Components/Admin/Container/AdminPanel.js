@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import BackButton from '../Pure/BackButton';
-import '../Styles/adminstyles.css'
+import BackButton from '../../Pure/BackButton';
+import '../../Styles/adminstyles.css'
 
 const AdminPanel = () => {
     return (
