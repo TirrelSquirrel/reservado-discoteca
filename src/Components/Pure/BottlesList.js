@@ -13,9 +13,9 @@ export default function BottlesList() {
   return (
     <div className="generic-container">
       <div className="main-container">
-        {bottles.map((bottle, index) => {
+        {bottles.map((bottle) => {
           return (
-            <div className="event-item" key={index}>
+            <div className="event-item" key={bottle._id}>
               <p className="event-name">
                 {bottle.name} {bottle.cuantity}L
               </p>
