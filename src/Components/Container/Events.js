@@ -11,14 +11,6 @@ const Events = () => {
       .then((res) => seteventsArray(res.data))
   }, []);
 
-  const formatDate = (date) => {
-    let dateArray = date.split('-')
-    dateArray[2] = dateArray[2].split('T')
-    dateArray[2] = dateArray[2][0]
-    dateArray.reverse()
-    let dateString = dateArray.join('-')
-    return dateString;
-  }
   return (
     <div className="generic-container">
       <div className="main-container">
@@ -27,7 +19,7 @@ const Events = () => {
             <div className="event-item px-2" key={event._id}>
               <p className="event-name">{event.title}</p>
               <p className="event-description">{event.description}</p>
-              <p className="event-date">{formatDate(event.date)}</p>
+              <p className="event-date">{event.date}</p>
             </div>
           );
         })}
