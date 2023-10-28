@@ -4,9 +4,11 @@ import { Button, Form } from "react-bootstrap";
 const NewEvent = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [date, setDate] = useState(new Date());
 
   const createEvent = (e) => {
     e.preventDefault();
+    console.log(date)
   };
   return (
     <>
@@ -31,6 +33,12 @@ const NewEvent = () => {
               onChange={(e) => setDescription(e.target.value)}
               required
             />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Fecha</Form.Label>
+            <Form.Control type="date" placeholder="Fecha"
+            value={date}
+            onChange={(e) => setDate(e.target.value)} />
           </Form.Group>
           <div className="admin-form-buttons">
             <Button variant="success" type="submit">
