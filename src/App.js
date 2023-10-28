@@ -12,6 +12,7 @@ import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
 import AdminPanel from "./Components/Admin/Container/AdminPanel";
 import AdminMenu from "./Components/Admin/Pure/AdminMenu";
+import AdminEvents from "./Components/Admin/Pure/AdminEvents";
 
 
 
@@ -31,6 +32,10 @@ function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="admin" element={<AdminPanel />}>
             <Route path="" element={<AdminMenu />} />
+            <Route path="events" element={<AdminEvents />}>
+              <Route path="edit" element={undefined} />
+              <Route path="new" element={undefined} />
+            </Route>
           </Route>
         </Route>
         <Route path="*" element={<ErrorComponent />} />
