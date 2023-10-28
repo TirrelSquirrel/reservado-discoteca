@@ -8,8 +8,8 @@ export default function FAQ() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/faq')
-      .then((data) => {        
-        setFaqList(data.data)
+      .then((res) => {        
+        setFaqList(res.data)
         console.log("FAQs", faqList);
       })
   }, []);

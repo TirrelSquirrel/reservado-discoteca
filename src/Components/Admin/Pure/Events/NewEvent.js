@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
@@ -8,7 +9,15 @@ const NewEvent = () => {
 
   const createEvent = (e) => {
     e.preventDefault();
-    console.log(date)
+    const body = {
+      title,
+      description,
+      date,
+    };
+    axios
+      .post("http://localhost:5000/event", body)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
   };
   return (
     <>
@@ -36,9 +45,12 @@ const NewEvent = () => {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Fecha</Form.Label>
-            <Form.Control type="date" placeholder="Fecha"
-            value={date}
-            onChange={(e) => setDate(e.target.value)} />
+            <Form.Control
+              type="date"
+              placeholder="Fecha"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
           </Form.Group>
           <div className="admin-form-buttons">
             <Button variant="success" type="submit">
