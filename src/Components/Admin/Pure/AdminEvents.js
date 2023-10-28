@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const AdminEvents = () => {
-    return (
-        <>
-            <h2 className='bold'>Eventos</h2>
-            <div className='admin-div-button'>Nuevo</div>
-            <div className='admin-div-button'>Editar</div>
-            <div className='admin-div-button'>Eliminar</div>
-        </>
-    );
-}
+
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+};
 
 export default AdminEvents;

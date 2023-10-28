@@ -28,3 +28,14 @@
 .admin-div-button:active {
   scale: 0.98;
 }
+
+.event-form {
+  margin: auto -50px;
+  padding: auto 0;
+  padding-bottom: 15px;
+}
+
+.admin-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+}

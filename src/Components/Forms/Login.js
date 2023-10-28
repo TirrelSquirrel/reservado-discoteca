@@ -51,6 +51,7 @@ const Login = () => {
     navigate("/main");
   };
 
+  //TODO:Register form
   const handleRegister = (e) => {
     e.preventDefault();
     if(password !== passwordRepeat) {

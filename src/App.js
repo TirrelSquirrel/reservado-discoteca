@@ -13,8 +13,10 @@ import ErrorComponent from "./Components/Pure/ErrorComponent";
 import AdminPanel from "./Components/Admin/Container/AdminPanel";
 import AdminMenu from "./Components/Admin/Pure/AdminMenu";
 import AdminEvents from "./Components/Admin/Pure/AdminEvents";
-
-
+import NewEvent from "./Components/Admin/Pure/Events/NewEvent";
+import EditEvents from "./Components/Admin/Pure/Events/EditEvents";
+import DeleteEvents from "./Components/Admin/Pure/Events/DeleteEvents";
+import AdminEventsMenu from "./Components/Admin/Pure/Events/AdminEventsMenu";
 
 function App() {
   return (
@@ -33,8 +35,10 @@ function App() {
           <Route path="admin" element={<AdminPanel />}>
             <Route path="" element={<AdminMenu />} />
             <Route path="events" element={<AdminEvents />}>
-              <Route path="edit" element={undefined} />
-              <Route path="new" element={undefined} />
+              <Route path="" element={<AdminEventsMenu />} />
+              <Route path="create" element={<NewEvent />} />
+              <Route path="edit" element={<EditEvents />} />
+              <Route path="delete" element={<DeleteEvents />} />
             </Route>
           </Route>
         </Route>
