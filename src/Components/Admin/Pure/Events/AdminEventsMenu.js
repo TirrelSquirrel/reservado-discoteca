@@ -10,7 +10,6 @@ const AdminEventsMenu = () => {
         Nuevo
       </div>
       <div className="admin-div-button" onClick={() => navigate('edit')}>Editar</div>
-      <div className="admin-div-button">Eliminar</div>
     </>
   );
 };
