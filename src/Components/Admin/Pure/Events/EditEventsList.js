@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const EditEventsList = () => {
+
+    const navigate = useNavigate()
 
     const [eventsArray, seteventsArray] = useState([]);
 
@@ -21,7 +24,7 @@ const EditEventsList = () => {
               <p className="event-description">{event.description}</p>
               <p className="event-date">{event.date}</p>
               <div className="card-buttons">
-                <div className='icon-button-div edit'>
+                <div className='icon-button-div edit' onClick={() => navigate(event._id)}>
                   <span className="material-symbols-outlined">edit</span>
                 </div>
                 <div className='icon-button-div delete'>
