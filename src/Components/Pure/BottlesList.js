@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import BackButton from "./BackButton";
 
-export default function BottlesList() {
+const BottlesList = () => {
   const [bottles, setBottles] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,10 @@ export default function BottlesList() {
             </div>
           );
         })}
+        <BackButton />
       </div>
     </div>
   );
 }
+
+export default BottlesList;

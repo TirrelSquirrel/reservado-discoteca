@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BackButton from "../Pure/BackButton";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Events = () => {
 

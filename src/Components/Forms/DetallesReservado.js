@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import maishaMap from "../../img/vectors/Maisha.svg";
 
-export default function DetallesReservado() {
+const DetallesReservado = () => {
   let bookPlace = useParams().bookPlace.replace("-", " ");
 
   const maps = [
@@ -20,3 +20,5 @@ export default function DetallesReservado() {
     </>
   );
 }
+
+export default DetallesReservado;

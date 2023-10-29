@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BackButton from './BackButton'
 
-export default function FAQ() {
+const FAQ = () => {
 
   const [faqList, setFaqList] = useState([]);
 
@@ -10,7 +10,6 @@ export default function FAQ() {
     axios.get('http://localhost:5000/faq')
       .then((res) => {        
         setFaqList(res.data)
-        console.log("FAQs", faqList);
       })
   }, []);
 
@@ -31,3 +30,5 @@ export default function FAQ() {
     </div>
   );
 }
+
+export default FAQ;
