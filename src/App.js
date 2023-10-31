@@ -12,7 +12,6 @@ import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
 import AdminPanel from "./Components/Admin/Container/AdminPanel";
 import AdminMenu from "./Components/Admin/Pure/AdminMenu";
-import AdminEvents from "./Components/Admin/Pure/AdminEvents";
 import NewEvent from "./Components/Admin/Pure/Events/NewEvent";
 import EditEventsList from "./Components/Admin/Pure/Events/EditEventsList";
 import AdminEventsMenu from "./Components/Admin/Pure/Events/AdminEventsMenu";
