@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Alert, Button, Form } from "react-bootstrap";
 import axios from "axios";
 
 const EditEventForm = () => {
+  const navigate = useNavigate();
+
   const eventid = useParams().eventid;
 
   const [title, setTitle] = useState("");
@@ -19,7 +21,20 @@ const EditEventForm = () => {
   }, []);
 
   const handleEdit = (e) => {
-    //TODO:Aqui va el axios put
+    const event = {
+      _id: eventid,
+      title: title,
+      description: description,
+      date: date,
+    };
+
+    axios
+      .put("http://localhost:5000/event/", event)
+      .then((res) => {
+        console.log(res);
+        navigate(-1);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

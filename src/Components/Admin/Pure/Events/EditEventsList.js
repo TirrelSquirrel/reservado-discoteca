@@ -23,7 +23,10 @@ const EditEventsList = () => {
     };
     axios
       .put("http://localhost:5000/event/delete", body)
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res)
+        getEvents()
+      });
   };
 
   return (
