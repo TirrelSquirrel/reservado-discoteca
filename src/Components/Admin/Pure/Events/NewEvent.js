@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const NewEvent = () => {
+  const navigate = useNavigate()
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
@@ -17,7 +20,9 @@ const NewEvent = () => {
     axios
       .post("http://localhost:5000/event", body)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
+
+    navigate(-1)
   };
   return (
     <>
