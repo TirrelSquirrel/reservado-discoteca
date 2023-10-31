@@ -21,6 +21,7 @@ const EditEventForm = () => {
   }, []);
 
   const handleEdit = (e) => {
+    e.preventDefault()
     const event = {
       _id: eventid,
       title: title,
@@ -34,7 +35,6 @@ const EditEventForm = () => {
         console.log(res);
         navigate(-1);
       })
-      .catch((err) => console.log(err));
   };
 
   return (
