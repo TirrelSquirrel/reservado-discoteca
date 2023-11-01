@@ -1,32 +1,42 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const NewBottle = () => {
+const EditBottleForm = () => {
   const navigate = useNavigate();
+  const bottleid = useParams().bottleid;
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [cuantity, setCuantity] = useState(0.7);
 
-  const createBottle = (e) => {
-    e.preventDefault();
-    const body = {
-        name,
-        price,
-        cuantity
-    };
-    axios
-      .post("http://localhost:5000/drink", body)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+  useEffect(() => {
+    axios.get("http://localhost:5000/drink/" + bottleid).then((res) => {
+      setName(res.data.name);
+      setPrice(res.data.price);
+      setCuantity(res.data.cuantity);
+    });
+  }, []);
 
-    navigate(-1);
+  const handleEdit = (e) => {
+    e.preventDefault();
+    const bottle = {
+      _id: bottleid,
+      name,
+      price,
+      cuantity,
+    };
+
+    axios.put("http://localhost:5000/drink/", bottle).then((res) => {
+      console.log(res);
+      navigate(-1);
+    });
   };
+
   return (
     <>
-      <Form onSubmit={(e) => createBottle(e)}>
+      <Form onSubmit={(e) => handleEdit(e)}>
         <h2 className="bold">Nueva botella</h2>
         <div className="event-form">
           <Form.Group className="mb-3">
@@ -34,15 +44,17 @@ const NewBottle = () => {
             <Form.Control
               type="text"
               placeholder="Nombre de la botella"
+              value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Precio €</Form.Label>
-            <Form.Control              
+            <Form.Control
               type="number"
               placeholder="Precio €"
+              value={price}
               onChange={(e) => setPrice(e.target.value)}
               required
             />
@@ -67,4 +79,4 @@ const NewBottle = () => {
   );
 };
 
-export default NewBottle;
+export default EditBottleForm;

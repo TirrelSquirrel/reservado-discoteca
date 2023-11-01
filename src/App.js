@@ -27,6 +27,7 @@ import AdminFAQs from "./Components/Admin/Container/AdminFAQs";
 import AdminBottlesMenu from "./Components/Admin/Pure/Bottles/AdminBottlesMenu";
 import NewBottle from "./Components/Admin/Forms/Bottles/NewBottle";
 import EditBottlesList from "./Components/Admin/Pure/Bottles/EditBottlesList";
+import EditBottleForm from "./Components/Admin/Forms/Bottles/EditBottleForm";
 
 function App() {
   return (
@@ -68,7 +69,7 @@ function App() {
               <Route path="create" element={<NewBottle />} />
               <Route path="edit" element={<EditBottlesContainer />}>
                 <Route path="" element={<EditBottlesList />} />
-                <Route path=":faqid" element={undefined} />
+                <Route path=":bottleid" element={<EditBottleForm />} />
               </Route>
             </Route>
             <Route path="faq" element={<AdminFAQs />}>

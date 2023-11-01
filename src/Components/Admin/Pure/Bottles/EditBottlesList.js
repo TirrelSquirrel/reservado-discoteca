@@ -34,8 +34,8 @@ const EditBottlesList = () => {
         {bottlesArray.map((bottle) => {
           return (
             <div className="event-item px-2" key={bottle._id}>
-              <p className="event-name">{bottle.name} {bottle.cuantity}</p>
-              <p className="event-description">{bottle.price}</p>
+              <p className="event-name">{bottle.name} {bottle.cuantity}L</p>
+              <p className="event-name">{bottle.price}€</p>
               <div className="card-buttons">
                 <div
                   className="icon-button-div edit"
