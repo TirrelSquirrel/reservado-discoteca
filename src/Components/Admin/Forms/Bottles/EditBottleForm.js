@@ -24,9 +24,9 @@ const EditBottleForm = () => {
     e.preventDefault();
     const bottle = {
       _id: bottleid,
-      name,
-      price,
-      cuantity,
+      name: name,
+      price: price,
+      cuantity: cuantity,
     };
 
     axios.put("http://localhost:5000/drink/", bottle).then((res) => {
