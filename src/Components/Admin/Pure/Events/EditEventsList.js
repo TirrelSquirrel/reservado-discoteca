@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const EditEventsList = () => {
   const navigate = useNavigate();
 
-  const [eventsArray, seteventsArray] = useState([]);
+  const [eventsArray, setEventsArray] = useState([]);
 
   useEffect(() => {
     getEvents()
@@ -14,7 +14,7 @@ const EditEventsList = () => {
   const getEvents = () => {
     axios
       .get("http://localhost:5000/event")
-      .then((res) => seteventsArray(res.data));
+      .then((res) => setEventsArray(res.data));
   }
 
   const deleteEvent = (id) => {
