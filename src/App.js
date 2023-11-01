@@ -12,18 +12,20 @@ import FAQ from "./Components/Pure/FAQ";
 import ErrorComponent from "./Components/Pure/ErrorComponent";
 import AdminPanel from "./Components/Admin/Container/AdminPanel";
 import AdminMenu from "./Components/Admin/Pure/AdminMenu";
-import NewEvent from "./Components/Admin/Forms/NewEvent";
+import NewEvent from "./Components/Admin/Forms/Events/NewEvent";
 import EditEventsList from "./Components/Admin/Pure/Events/EditEventsList";
 import AdminEventsMenu from "./Components/Admin/Pure/Events/AdminEventsMenu";
-import EditEventForm from "./Components/Admin/Forms/EditEventForm";
+import EditEventForm from "./Components/Admin/Forms/Events/EditEventForm";
 import EditEventsContainer from "./Components/Admin/Container/EditEventsContainer";
 import EditFAQsContainer from "./Components/Admin/Container/EditFAQsContainer";
 import EditReservadosContainer from "./Components/Admin/Container/EditReservadosContainer";
 import AdminEvents from "./Components/Admin/Container/AdminEvents";
 import AdminReservados from "./Components/Admin/Container/AdminReservados";
-import AdminBottles from './Components/Admin/Container/AdminBottles'
-import EditBottlesContainer from './Components/Admin/Container/EditBottlesContainer'
-import AdminFAQs from './Components/Admin/Container/AdminFAQs'
+import AdminBottles from "./Components/Admin/Container/AdminBottles";
+import EditBottlesContainer from "./Components/Admin/Container/EditBottlesContainer";
+import AdminFAQs from "./Components/Admin/Container/AdminFAQs";
+import AdminBottlesMenu from "./Components/Admin/Pure/Bottles/AdminBottlesMenu";
+import NewBottle from "./Components/Admin/Forms/Bottles/NewBottle";
 
 function App() {
   return (
@@ -41,7 +43,7 @@ function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="admin" element={<AdminPanel />}>
             <Route path="" element={<AdminMenu />} />
-            <Route path="events" element={<AdminEvents/>}>
+            <Route path="events" element={<AdminEvents />}>
               <Route path="" element={<AdminEventsMenu />} />
               <Route path="create" element={<NewEvent />} />
               <Route path="edit" element={<EditEventsContainer />}>
@@ -49,6 +51,9 @@ function App() {
                 <Route path=":eventid" element={<EditEventForm />} />
               </Route>
             </Route>
+            {
+              //TODO
+            }
             <Route path="book" element={<AdminReservados />}>
               <Route path="" element={undefined} />
               <Route path="create" element={undefined} />
@@ -58,8 +63,8 @@ function App() {
               </Route>
             </Route>
             <Route path="bottles" element={<AdminBottles />}>
-              <Route path="" element={undefined} />
-              <Route path="create" element={undefined} />
+              <Route path="" element={<AdminBottlesMenu />} />
+              <Route path="create" element={<NewBottle />} />
               <Route path="edit" element={<EditBottlesContainer />}>
                 <Route path="" element={undefined} />
                 <Route path=":faqid" element={undefined} />

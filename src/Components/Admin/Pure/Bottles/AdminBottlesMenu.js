@@ -1,10 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminBottlesMenu = () => {
+    const navigate = useNavigate()
     return (
-        <div>
-            
+      <>
+        <h2 className="bold">Eventos</h2>
+        <div className="admin-div-button" onClick={() => navigate("create")}>
+          Nuevo
         </div>
+        <div className="admin-div-button" onClick={() => navigate("edit")}>
+          Editar
+        </div>
+      </>
     );
 }
 
