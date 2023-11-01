@@ -17,6 +17,7 @@ const EditBottleForm = () => {
       setPrice(res.data.price);
       setCuantity(res.data.cuantity);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleEdit = (e) => {

@@ -18,6 +18,7 @@ const EditEventForm = () => {
       setDescription(res.data.description);
       setDate(res.data.date);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleEdit = (e) => {
